@@ -1,0 +1,308 @@
+<html>
+            <head>
+                <meta charset="utf-8">
+                <title>Feedforward</title>
+                <!-- No type="module", can't load from file protocol -->
+                <script src="./zz-shared.js"></script>
+                <script src="./zz-terms.js"></script>
+                <style>
+                    *    { box-sizing:border-box; }
+                    body { 
+                        font-family:sans-serif; font-size:1rem; text-align:center; 
+                        background-color:#f7f7f7; line-height:1.5rem;
+                    }
+                    body >* { 
+                        text-align:left; background-color:white; 
+                        padding-left:1.5rem; padding-right:1.5rem;
+                        border:1px solid white;
+                    }
+                    body >div { 
+                        width:50vw; margin-left:auto; margin-right:auto; 
+                        border-bottom:1px dotted #eee; min-height:1.5rem;
+                    }
+                    h1,h2,h3,h4,h5,h6 {
+                        display:block; width:50vw; margin-left:auto;
+                        margin-right:auto; margin-top:0; margin-bottom:0;
+                    }
+                    table { border-collapse:collapse; }
+                    td { 
+                        line-height:1.5rem; padding-left:.5rem; padding-right:.5rem;
+                        border:1px solid #777;
+                    }
+                    code     { white-space:pre; }
+                    pre      { background-color:#eee; margin-top:0; margin-bottom:0; }
+                    .img-ele { width:100%; }
+                    .content-table td:nth-child(1) {
+                        width:.5rem; padding-right:0; padding-left:0;
+                    }
+                </style>
+            </head>
+            <body><div style="background-color:white; border-radius:.5rem .5rem 0 0;">
+            <h1 style="border-radius:.5rem; height:2rem; margin-top:2rem;">
+                <span style="background-color:#ddd; border-radius:.7rem;">⏩</span>
+                <span style="float:right; margin-right:calc(3rem + 5px);">🔎
+                <input id="Search-Input" onclick="this.value='';" 
+                    onkeyup="shared.search(event);" 
+                    style="vertical-align:middle;">
+            </span>
+            </h1>
+            <h1>Feedforward</h1><hr>
+        </div>
+        <div>&nbsp;</div><div>&nbsp;</div><div id="Toc" style="position:fixed; width:calc(25vw - 1.5rem); height:100vh; left:0; top:0;
+                padding:1.5rem; background-color:transparent; max-height:100vh;
+                overflow-x:hidden;">
+            <div>
+                <big>Table of Contents</big>
+                [<a onclick="javascript:shared.show_all(event);"
+                 style="cursor:pointer; text-decoration:underline;">Show All</a>]
+            </div>
+            <div class="toc-item" depth="0" hashid="b58754476682fe94e532c60f52abe588"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(0 * 1rem);"
+         >🤖<a href="Cap-AI-ML-b58754.html">Cap AI/ML</a></div><div class="toc-item" depth="1" hashid="dc60b6383a2203ab21e7d7fb29cff4ce"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >📢<a href="Preface-dc60b6.html">Preface</a></div><div class="toc-item" depth="1" hashid="4e35b66aff51bc163e05a30698a28ad9"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >❓<a href="What-are-AI-and-ML-4e35b6.html">What are AI and ML</a></div><div class="toc-item" depth="1" hashid="e657395f4a6a83e6b9dac9038eca897c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🧮<a href="Mathematics-Recap-e65739.html">Mathematics Recap</a></div><div class="toc-item" depth="2" hashid="c0fb48f4156a598fd9d221cddb9fde70"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📈<a href="Calculus-c0fb48.html">Calculus</a></div><div class="toc-item" depth="2" hashid="37ecbe097743d6f19cb83c61b0dc0817"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📅<a href="Algebra-37ecbe.html">Algebra</a></div><div class="toc-item" depth="1" hashid="1f1b5b2bf89c8aa0d36b1336dd70a923"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🔢<a href="Machine-Learning-Basics-1f1b5b.html">Machine Learning Basics</a></div><div class="toc-item" depth="2" hashid="cf5fbbd17bf9a0afea0cd66a38318d66"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🧸<a href="Models-for-ML-cf5fbb.html">Models for ML</a></div><div class="toc-item" depth="2" hashid="b73314c91cd5e088b8105fca365d2d20"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📐<a href="Methods-of-ML-b73314.html">Methods of ML</a></div><div class="toc-item" depth="2" hashid="14aca0f8b78d43479bd89f9e772a4fc2"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🪛<a href="Libraries-to-Use-14aca0.html">Libraries to Use</a></div><div class="toc-item" depth="1" hashid="ddecb966f415478f3c488e584f802410"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🔠<a href="Neuralnet-Alphabet-ddecb9.html">Neuralnet Alphabet</a></div><div class="toc-item" depth="1" hashid="4e4c69f804f86b8af786b976a563de7b"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🕸️<a href="Neuralnet-4e4c69.html">Neuralnet</a></div><div class="toc-item" depth="2" hashid="793d9d85f5b33829a1e4daf3da89fd1b"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🪢<a href="The-Network-793d9d.html">The Network</a></div><div class="toc-item" depth="3" hashid="b7ac4eab38a193fa76b02231087f8602"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🧩<a href="Neuron-b7ac4e.html">Neuron</a></div><div class="toc-item" depth="4" hashid="6f87e633d65cb87d0bcb4317d6461ba2"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(4 * 1rem);"
+         >🔣<a href="Types-of-Neurons-6f87e6.html">Types of Neurons</a></div><div class="toc-item" depth="4" hashid="7b1750e6dccdba8dfcda6b1b8e2ab1e7"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(4 * 1rem);"
+         >➗<a href="Input-Separations-7b1750.html">Input Separations</a></div><div class="toc-item" depth="4" hashid="f7b76fd837340f268ef46d06a957f206"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(4 * 1rem);"
+         >⏩<a href="Activation-Functions-f7b76f.html">Activation Functions</a></div><div class="toc-item" depth="3" hashid="6d61c7f829d563e7080cd8b1b484835c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🍔<a href="Layers-in-Network-6d61c7.html">Layers in Network</a></div><div class="toc-item" depth="3" hashid="cced98fc2ef5de49c90279542dd4a9c9"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🎬<a href="Loss-Functions-cced98.html">Loss Functions</a></div><div class="toc-item" depth="2" hashid="2aa0662859d945569be494fb713e4339"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🌀<a href="The-Ops-2aa066.html">The Ops</a></div><div class="toc-item" depth="3" hashid="606a70a6add0df4f0d5a29089159ae3e"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >📉<a href="Gradient-Descent-606a70.html">Gradient Descent</a></div><div class="toc-item" depth="3" hashid="d30da105ed4d05af2e6b8727977628b1"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >⏩<a href="Feedforward-d30da1.html">Feedforward</a></div><div class="toc-item" depth="3" hashid="34ca531d22d40288d3732b2be0d4a02c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >⏪<a href="Backpropagation-34ca53.html">Backpropagation</a></div><div class="toc-item" depth="2" hashid="8b138462d8885fbeb3d748419f62ddf0"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🥋<a href="Optimisers-Training-8b1384.html">Optimisers & Training</a></div><div class="toc-item" depth="2" hashid="c24fd9fb6b9b236372ab611bf2d1add4"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🔩<a href="Techniques-in-ML-c24fd9.html">Techniques in ML</a></div><div class="toc-item" depth="3" hashid="0c47b6046ce4372a74bfa829d66d775d"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🟰<a href="Normalisation-0c47b6.html">Normalisation</a></div><div class="toc-item" depth="3" hashid="95e518fb90e2040e03a31a731e9dd276"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >✖️<a href="Regularisation-95e518.html">Regularisation</a></div><div class="toc-item" depth="3" hashid="ae298dc6f9618db9e3437ff0e9e955ca"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >➕<a href="Concatenation-ae298d.html">Concatenation</a></div><div class="toc-item" depth="3" hashid="6f088fdbca9d4d85bd8a32582e88917e"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >➗<a href="Boosted-Combinatory-6f088f.html">Boosted & Combinatory</a></div><div class="toc-item" depth="3" hashid="c1ab0910805040fc7be615432765594c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🆒<a href="Heuristic-Hyperparams-c1ab09.html">Heuristic Hyperparams</a></div><div class="toc-item" depth="2" hashid="984b37e07ebd91af5e5577093799b61f"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >💢<a href="Problems-in-Neuralnet-984b37.html">Problems in Neuralnet</a></div><div class="toc-item" depth="3" hashid="3c11a479abdcbae864c588c5a0e27027"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >💯<a href="Overfitting-3c11a4.html">Overfitting</a></div><div class="toc-item" depth="3" hashid="85bb854a1b168c91277e20b0712c83a6"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >💥<a href="Explosion-and-Vanishing-85bb85.html">Explosion and Vanishing</a></div><div class="toc-item" depth="1" hashid="2e2d42fc3acfd0effa36b70872ea02ac"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >👀<a href="Supervised-Learning-2e2d42.html">Supervised Learning</a></div><div class="toc-item" depth="2" hashid="0c36adf4336f12a31645ba866e0beb82"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📉<a href="Regression-0c36ad.html">Regression</a></div><div class="toc-item" depth="2" hashid="51e5a6b18867914e28b763e2a19a79b1"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🔀<a href="Classification-51e5a6.html">Classification</a></div><div class="toc-item" depth="1" hashid="8d366db0d63d4d8b431dcaf940eca41c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🌀<a href="Reinforcement-Learning-8d366d.html">Reinforcement Learning</a></div><div class="toc-item" depth="2" hashid="624c35b2a848cd257c1e2cc87397d493"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >👣<a href="Concepts-624c35.html">Concepts</a></div><div class="toc-item" depth="2" hashid="9f2c9f266a014af944db5c1fbea45887"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🔬<a href="Learning-Tactics-9f2c9f.html">Learning Tactics</a></div><div class="toc-item" depth="2" hashid="e892da0e7b722070d6b8c1dbc8a41118"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🅰<a href="Policy-Network-e892da.html">Policy Network</a></div><div class="toc-item" depth="2" hashid="5a1e58cbc03910ced8d50a7b033989df"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🅱<a href="Bellman-Equation-5a1e58.html">Bellman Equation</a></div><div class="toc-item" depth="3" hashid="69235b1514c2cc654006a1dbedb497e1"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >📃<a href="Q-Terms-69235b.html">Q Terms</a></div><div class="toc-item" depth="2" hashid="e6d82dff6b1e0239fec5f70d6a8a8173"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📅<a href="Q-table-e6d82d.html">Q-table</a></div><div class="toc-item" depth="2" hashid="945adc9c6d9be7ffc7982a2671630d26"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🕸️<a href="Q-network-945adc.html">Q-network</a></div><div class="toc-item" depth="3" hashid="2b81e71eb77cddce24c53bf4c452b894"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >📃<a href="Training-Options-2b81e7.html">Training Options</a></div><div class="toc-item" depth="1" hashid="d1c1e7b882ddf05be8f769235885fdd7"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🆔<a href="Unsupervised-Learning-d1c1e7.html">Unsupervised Learning</a></div><div class="toc-item" depth="2" hashid="2c8b7268cc8ace34b55b4b2f87acab2a"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🛞<a href="Some-Applications-2c8b72.html">Some Applications</a></div><div class="toc-item" depth="1" hashid="38cab94b9f0fed6a212e286ad35277c5"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🔂<a href="Incremental-Learning-38cab9.html">Incremental Learning</a></div><div class="toc-item" depth="1" hashid="a6ad6570017e57e4b89d5dcb7367af4a"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >📋<a href="Case-Studies-a6ad65.html">Case Studies</a></div><div class="toc-item" depth="2" hashid="7d58e11e2ece6016e519dfe7d6b81a08"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🧭<a href="Classic-7d58e1.html">Classic</a></div><div class="toc-item" depth="3" hashid="93fde785b14b65e61155db3ac4a74ccd"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🔢<a href="Classification-93fde7.html">Classification</a></div><div class="toc-item" depth="3" hashid="9a472cde5909f4ba671126bd1ebcbbb3"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >📊<a href="Regression-9a472c.html">Regression</a></div><div class="toc-item" depth="3" hashid="4cfb042697df92f61164e45a11a01027"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🧸<a href="Pattern-Learning-4cfb04.html">Pattern Learning</a></div><div class="toc-item" depth="3" hashid="53a003cb87d2d4681fd2a39504e33095"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🔤<a href="Sequence-Learning-53a003.html">Sequence Learning</a></div><div class="toc-item" depth="2" hashid="17f0d9db451a75c0c19dc550feba59ab"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >♒<a href="Algorithm-Approximator-17f0d9.html">Algorithm Approximator</a></div><div class="toc-item" depth="2" hashid="45ca6f2cd25d8f7ec8c170e842d9045f"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >💡<a href="Generative-45ca6f.html">Generative</a></div><div class="toc-item" depth="1" hashid="38d24b0fa6173d55d405e33deda300a8"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >👍<a href="Notable-Mentions-38d24b.html">Notable Mentions</a></div><div style="height:25vh;">&nbsp;</div>
+        </div><style>
+            /*Firefox:*/
+            * { 
+                scrollbar-width:thin; scrollbar-color:silver white;
+            }    
+
+            /*WebKit (Safari), Blink, Chromium (Chrome, Edge, Vivaldi,...)*/
+            *::-webkit-scrollbar       { width:10px; }
+            *::-webkit-scrollbar-track { background:#eee; }
+            *::-webkit-scrollbar-thumb { background:#ddd; }
+        </style>
+        <div id="Rels" style="position:fixed; width:25vw; height:100vh; right:0; top:0;
+                padding:1.5rem; background-color:transparent; max-height:100vh;
+                overflow-x:hidden;">
+            <div><big>Previous Notes</big></div><div>
+                <a target="_self" href="The-Ops-2aa066.html">The Ops</a>
+            </div><div>&nbsp;</div><div><big>Next Notes</big></div>No next notes</div><div type="image" indent="0" style="padding-left:calc(1.5rem + 0rem); font-family:arial;
+            color:black; background-color:white; display:flex; 
+            flex-direction:column; border:1px solid #eee; border-radius:.5rem;"><img class="img-ele" src="https://www.dropbox.com/scl/fi/x2zspqertwomp4btpnyd6/sample-neuralnet-diagram.png?rlkey=vxh6g2r1dxudhvpe88oxihid2&amp;raw=1" style="width:100%;"></div><div type="text" indent="0" style="padding-left:calc(1.5rem + 0rem); font-family:arial;
+            color:black; background-color:white;"><div style="margin-top: 0.5em; margin-bottom: 0.5em;">A sample network for using in feedforward and backpropagation, and finding the formula for backpropagation is with <span style="font-weight: bold;">2 layers, 2 neurons</span> in each layer, and also <span style="font-weight: bold;">2 input values</span>:</div><ul style="margin-block-start: 1em;"><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;">At least 2 layers to make a network</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;">At least 2 output neurons to make sense of the loss function</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;">The network learns the summarised way so the first layer should have at least the same neurons with the output layer.</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;">It doesn’t make sense using 1 input value in generic ML case, so 2 input values are used.</li></ul><h1 style="margin-top: 1em; margin-bottom: 0.5em;">Diagram</h1><div style="margin-top: 0.5em; margin-bottom: 0.5em;">Where</div><ul style="margin-block-start: 1em;"><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;"><span style="font-family: monospace;">x1</span>, <span style="font-family: monospace;">x2</span> are input values</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;"><span style="font-family: monospace;">w1</span> to <span style="font-family: monospace;">w8</span> are weights at dendrites of neurons</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;"><span style="font-family: monospace;">b1</span> to <span style="font-family: monospace;">b4</span> are the biases of neurons</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;"><span style="font-family: monospace;">d1</span> to <span style="font-family: monospace;">d4</span> are the dot-products inside neurons</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;"><span style="font-family: monospace;">h1</span> to <span style="font-family: monospace;">h4</span> are the hidden outputs of neurons</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;"><span style="font-family: monospace;">u1</span> and <span style="font-family: monospace;">u2</span> are the final outputs of last layer neurons</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;"><span style="font-family: monospace;">fe</span> is the loss function</li><li style="text-align: left; list-style-type: disc; margin-top: 0.5em; margin-bottom: 0.5em;"><span style="font-family: monospace;">e</span> is the loss value</li></ul><h1 style="margin-top: 1em; margin-bottom: 0.5em;">Mathematics</h1><div style="margin-top: 0.5em; margin-bottom: 0.5em;">Basic neuron uses dot-product in its nucleus, and the activation function before axon can be any. This feedforward is the standard way which is described in many books and articles.</div><h2 style="margin-top: 1em; margin-bottom: 0.5em;">The Dot Products</h2><div style="margin-top: 0.5em; margin-bottom: 0.5em;">All the dot-products inside neurons:<br><img src="data:image/png;base64,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" alt=""><br></div><div style="margin-top: 0.5em; margin-bottom: 0.5em;"><br></div><h2 style="margin-top: 1em; margin-bottom: 0.5em;">The Activations</h2><div style="margin-top: 0.5em; margin-bottom: 0.5em;">Consider that all neurons use the same activation function <span style="font-family: monospace;">f</span>.<br><img src="data:image/png;base64,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" alt=""><br></div><div style="margin-top: 0.5em; margin-bottom: 0.5em;"><br></div><h2 style="margin-top: 1em; margin-bottom: 0.5em;">The Loss Function</h2><div style="margin-top: 0.5em; margin-bottom: 0.5em;">Consider using the common MSE (Mean Squared Error) loss function to easily get gradient function (derivative) of loss function.</div><div style="margin-top: 0.5em; margin-bottom: 0.5em;">Final loss:<br><img src="data:image/png;base64,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" alt=""><br></div><div style="margin-top: 0.5em; margin-bottom: 0.5em;"><br></div><div style="margin-top: 0.5em; margin-bottom: 0.5em;">Feedforward is ending at this last value which is the final loss. The next computation will go in <span style="display: inline-block;"><a href="https://coda.io/d/_d-_6Lp7F2Ee/_suuvL">Backpropagation</a></span>.</div></div><div style='height:50vh; border-radius:0 0 .5rem .5rem;'>&nbsp;</div>
+             </body></html>

@@ -1,0 +1,316 @@
+<html>
+            <head>
+                <meta charset="utf-8">
+                <title>Techniques in ML</title>
+                <!-- No type="module", can't load from file protocol -->
+                <script src="./zz-shared.js"></script>
+                <script src="./zz-terms.js"></script>
+                <style>
+                    *    { box-sizing:border-box; }
+                    body { 
+                        font-family:sans-serif; font-size:1rem; text-align:center; 
+                        background-color:#f7f7f7; line-height:1.5rem;
+                    }
+                    body >* { 
+                        text-align:left; background-color:white; 
+                        padding-left:1.5rem; padding-right:1.5rem;
+                        border:1px solid white;
+                    }
+                    body >div { 
+                        width:50vw; margin-left:auto; margin-right:auto; 
+                        border-bottom:1px dotted #eee; min-height:1.5rem;
+                    }
+                    h1,h2,h3,h4,h5,h6 {
+                        display:block; width:50vw; margin-left:auto;
+                        margin-right:auto; margin-top:0; margin-bottom:0;
+                    }
+                    table { border-collapse:collapse; }
+                    td { 
+                        line-height:1.5rem; padding-left:.5rem; padding-right:.5rem;
+                        border:1px solid #777;
+                    }
+                    code     { white-space:pre; }
+                    pre      { background-color:#eee; margin-top:0; margin-bottom:0; }
+                    .img-ele { width:100%; }
+                    .content-table td:nth-child(1) {
+                        width:.5rem; padding-right:0; padding-left:0;
+                    }
+                </style>
+            </head>
+            <body><div style="background-color:white; border-radius:.5rem .5rem 0 0;">
+            <h1 style="border-radius:.5rem; height:2rem; margin-top:2rem;">
+                <span style="background-color:#ddd; border-radius:.7rem;">🔩</span>
+                <span style="float:right; margin-right:calc(3rem + 5px);">🔎
+                <input id="Search-Input" onclick="this.value='';" 
+                    onkeyup="shared.search(event);" 
+                    style="vertical-align:middle;">
+            </span>
+            </h1>
+            <h1>Techniques in ML</h1><hr>
+        </div>
+        <div>&nbsp;</div><div>&nbsp;</div><div id="Toc" style="position:fixed; width:calc(25vw - 1.5rem); height:100vh; left:0; top:0;
+                padding:1.5rem; background-color:transparent; max-height:100vh;
+                overflow-x:hidden;">
+            <div>
+                <big>Table of Contents</big>
+                [<a onclick="javascript:shared.show_all(event);"
+                 style="cursor:pointer; text-decoration:underline;">Show All</a>]
+            </div>
+            <div class="toc-item" depth="0" hashid="b58754476682fe94e532c60f52abe588"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(0 * 1rem);"
+         >🤖<a href="Cap-AI-ML-b58754.html">Cap AI/ML</a></div><div class="toc-item" depth="1" hashid="dc60b6383a2203ab21e7d7fb29cff4ce"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >📢<a href="Preface-dc60b6.html">Preface</a></div><div class="toc-item" depth="1" hashid="4e35b66aff51bc163e05a30698a28ad9"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >❓<a href="What-are-AI-and-ML-4e35b6.html">What are AI and ML</a></div><div class="toc-item" depth="1" hashid="e657395f4a6a83e6b9dac9038eca897c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🧮<a href="Mathematics-Recap-e65739.html">Mathematics Recap</a></div><div class="toc-item" depth="2" hashid="c0fb48f4156a598fd9d221cddb9fde70"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📈<a href="Calculus-c0fb48.html">Calculus</a></div><div class="toc-item" depth="2" hashid="37ecbe097743d6f19cb83c61b0dc0817"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📅<a href="Algebra-37ecbe.html">Algebra</a></div><div class="toc-item" depth="1" hashid="1f1b5b2bf89c8aa0d36b1336dd70a923"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🔢<a href="Machine-Learning-Basics-1f1b5b.html">Machine Learning Basics</a></div><div class="toc-item" depth="2" hashid="cf5fbbd17bf9a0afea0cd66a38318d66"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🧸<a href="Models-for-ML-cf5fbb.html">Models for ML</a></div><div class="toc-item" depth="2" hashid="b73314c91cd5e088b8105fca365d2d20"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📐<a href="Methods-of-ML-b73314.html">Methods of ML</a></div><div class="toc-item" depth="2" hashid="14aca0f8b78d43479bd89f9e772a4fc2"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🪛<a href="Libraries-to-Use-14aca0.html">Libraries to Use</a></div><div class="toc-item" depth="1" hashid="ddecb966f415478f3c488e584f802410"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🔠<a href="Neuralnet-Alphabet-ddecb9.html">Neuralnet Alphabet</a></div><div class="toc-item" depth="1" hashid="4e4c69f804f86b8af786b976a563de7b"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🕸️<a href="Neuralnet-4e4c69.html">Neuralnet</a></div><div class="toc-item" depth="2" hashid="793d9d85f5b33829a1e4daf3da89fd1b"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🪢<a href="The-Network-793d9d.html">The Network</a></div><div class="toc-item" depth="3" hashid="b7ac4eab38a193fa76b02231087f8602"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🧩<a href="Neuron-b7ac4e.html">Neuron</a></div><div class="toc-item" depth="4" hashid="6f87e633d65cb87d0bcb4317d6461ba2"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(4 * 1rem);"
+         >🔣<a href="Types-of-Neurons-6f87e6.html">Types of Neurons</a></div><div class="toc-item" depth="4" hashid="7b1750e6dccdba8dfcda6b1b8e2ab1e7"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(4 * 1rem);"
+         >➗<a href="Input-Separations-7b1750.html">Input Separations</a></div><div class="toc-item" depth="4" hashid="f7b76fd837340f268ef46d06a957f206"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(4 * 1rem);"
+         >⏩<a href="Activation-Functions-f7b76f.html">Activation Functions</a></div><div class="toc-item" depth="3" hashid="6d61c7f829d563e7080cd8b1b484835c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🍔<a href="Layers-in-Network-6d61c7.html">Layers in Network</a></div><div class="toc-item" depth="3" hashid="cced98fc2ef5de49c90279542dd4a9c9"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🎬<a href="Loss-Functions-cced98.html">Loss Functions</a></div><div class="toc-item" depth="2" hashid="2aa0662859d945569be494fb713e4339"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🌀<a href="The-Ops-2aa066.html">The Ops</a></div><div class="toc-item" depth="3" hashid="606a70a6add0df4f0d5a29089159ae3e"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >📉<a href="Gradient-Descent-606a70.html">Gradient Descent</a></div><div class="toc-item" depth="3" hashid="d30da105ed4d05af2e6b8727977628b1"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >⏩<a href="Feedforward-d30da1.html">Feedforward</a></div><div class="toc-item" depth="3" hashid="34ca531d22d40288d3732b2be0d4a02c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >⏪<a href="Backpropagation-34ca53.html">Backpropagation</a></div><div class="toc-item" depth="2" hashid="8b138462d8885fbeb3d748419f62ddf0"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🥋<a href="Optimisers-Training-8b1384.html">Optimisers & Training</a></div><div class="toc-item" depth="2" hashid="c24fd9fb6b9b236372ab611bf2d1add4"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🔩<a href="Techniques-in-ML-c24fd9.html">Techniques in ML</a></div><div class="toc-item" depth="3" hashid="0c47b6046ce4372a74bfa829d66d775d"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🟰<a href="Normalisation-0c47b6.html">Normalisation</a></div><div class="toc-item" depth="3" hashid="95e518fb90e2040e03a31a731e9dd276"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >✖️<a href="Regularisation-95e518.html">Regularisation</a></div><div class="toc-item" depth="3" hashid="ae298dc6f9618db9e3437ff0e9e955ca"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >➕<a href="Concatenation-ae298d.html">Concatenation</a></div><div class="toc-item" depth="3" hashid="6f088fdbca9d4d85bd8a32582e88917e"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >➗<a href="Boosted-Combinatory-6f088f.html">Boosted & Combinatory</a></div><div class="toc-item" depth="3" hashid="c1ab0910805040fc7be615432765594c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🆒<a href="Heuristic-Hyperparams-c1ab09.html">Heuristic Hyperparams</a></div><div class="toc-item" depth="2" hashid="984b37e07ebd91af5e5577093799b61f"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >💢<a href="Problems-in-Neuralnet-984b37.html">Problems in Neuralnet</a></div><div class="toc-item" depth="3" hashid="3c11a479abdcbae864c588c5a0e27027"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >💯<a href="Overfitting-3c11a4.html">Overfitting</a></div><div class="toc-item" depth="3" hashid="85bb854a1b168c91277e20b0712c83a6"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >💥<a href="Explosion-and-Vanishing-85bb85.html">Explosion and Vanishing</a></div><div class="toc-item" depth="1" hashid="2e2d42fc3acfd0effa36b70872ea02ac"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >👀<a href="Supervised-Learning-2e2d42.html">Supervised Learning</a></div><div class="toc-item" depth="2" hashid="0c36adf4336f12a31645ba866e0beb82"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📉<a href="Regression-0c36ad.html">Regression</a></div><div class="toc-item" depth="2" hashid="51e5a6b18867914e28b763e2a19a79b1"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🔀<a href="Classification-51e5a6.html">Classification</a></div><div class="toc-item" depth="1" hashid="8d366db0d63d4d8b431dcaf940eca41c"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🌀<a href="Reinforcement-Learning-8d366d.html">Reinforcement Learning</a></div><div class="toc-item" depth="2" hashid="624c35b2a848cd257c1e2cc87397d493"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >👣<a href="Concepts-624c35.html">Concepts</a></div><div class="toc-item" depth="2" hashid="9f2c9f266a014af944db5c1fbea45887"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🔬<a href="Learning-Tactics-9f2c9f.html">Learning Tactics</a></div><div class="toc-item" depth="2" hashid="e892da0e7b722070d6b8c1dbc8a41118"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🅰<a href="Policy-Network-e892da.html">Policy Network</a></div><div class="toc-item" depth="2" hashid="5a1e58cbc03910ced8d50a7b033989df"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🅱<a href="Bellman-Equation-5a1e58.html">Bellman Equation</a></div><div class="toc-item" depth="3" hashid="69235b1514c2cc654006a1dbedb497e1"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >📃<a href="Q-Terms-69235b.html">Q Terms</a></div><div class="toc-item" depth="2" hashid="e6d82dff6b1e0239fec5f70d6a8a8173"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >📅<a href="Q-table-e6d82d.html">Q-table</a></div><div class="toc-item" depth="2" hashid="945adc9c6d9be7ffc7982a2671630d26"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🕸️<a href="Q-network-945adc.html">Q-network</a></div><div class="toc-item" depth="3" hashid="2b81e71eb77cddce24c53bf4c452b894"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >📃<a href="Training-Options-2b81e7.html">Training Options</a></div><div class="toc-item" depth="1" hashid="d1c1e7b882ddf05be8f769235885fdd7"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🆔<a href="Unsupervised-Learning-d1c1e7.html">Unsupervised Learning</a></div><div class="toc-item" depth="2" hashid="2c8b7268cc8ace34b55b4b2f87acab2a"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🛞<a href="Some-Applications-2c8b72.html">Some Applications</a></div><div class="toc-item" depth="1" hashid="38cab94b9f0fed6a212e286ad35277c5"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >🔂<a href="Incremental-Learning-38cab9.html">Incremental Learning</a></div><div class="toc-item" depth="1" hashid="a6ad6570017e57e4b89d5dcb7367af4a"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >📋<a href="Case-Studies-a6ad65.html">Case Studies</a></div><div class="toc-item" depth="2" hashid="7d58e11e2ece6016e519dfe7d6b81a08"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >🧭<a href="Classic-7d58e1.html">Classic</a></div><div class="toc-item" depth="3" hashid="93fde785b14b65e61155db3ac4a74ccd"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🔢<a href="Classification-93fde7.html">Classification</a></div><div class="toc-item" depth="3" hashid="9a472cde5909f4ba671126bd1ebcbbb3"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >📊<a href="Regression-9a472c.html">Regression</a></div><div class="toc-item" depth="3" hashid="4cfb042697df92f61164e45a11a01027"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🧸<a href="Pattern-Learning-4cfb04.html">Pattern Learning</a></div><div class="toc-item" depth="3" hashid="53a003cb87d2d4681fd2a39504e33095"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(3 * 1rem);"
+         >🔤<a href="Sequence-Learning-53a003.html">Sequence Learning</a></div><div class="toc-item" depth="2" hashid="17f0d9db451a75c0c19dc550feba59ab"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >♒<a href="Algorithm-Approximator-17f0d9.html">Algorithm Approximator</a></div><div class="toc-item" depth="2" hashid="45ca6f2cd25d8f7ec8c170e842d9045f"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(2 * 1rem);"
+         >💡<a href="Generative-45ca6f.html">Generative</a></div><div class="toc-item" depth="1" hashid="38d24b0fa6173d55d405e33deda300a8"
+            oncontextmenu="shared.toggle_descendants(event);" 
+            title="Right-click to toggle children"
+            style="display:block; padding-left:calc(1 * 1rem);"
+         >👍<a href="Notable-Mentions-38d24b.html">Notable Mentions</a></div><div style="height:25vh;">&nbsp;</div>
+        </div><style>
+            /*Firefox:*/
+            * { 
+                scrollbar-width:thin; scrollbar-color:silver white;
+            }    
+
+            /*WebKit (Safari), Blink, Chromium (Chrome, Edge, Vivaldi,...)*/
+            *::-webkit-scrollbar       { width:10px; }
+            *::-webkit-scrollbar-track { background:#eee; }
+            *::-webkit-scrollbar-thumb { background:#ddd; }
+        </style>
+        <div id="Rels" style="position:fixed; width:25vw; height:100vh; right:0; top:0;
+                padding:1.5rem; background-color:transparent; max-height:100vh;
+                overflow-x:hidden;">
+            <div><big>Previous Notes</big></div><div>
+                <a target="_self" href="Neuralnet-4e4c69.html">Neuralnet</a>
+            </div><div>&nbsp;</div><div><big>Next Notes</big></div><div>
+                <a target="_self" href="Boosted-Combinatory-6f088f.html">Boosted & Combinatory</a>
+            </div><div>
+                <a target="_self" href="Concatenation-ae298d.html">Concatenation</a>
+            </div><div>
+                <a target="_self" href="Heuristic-Hyperparams-c1ab09.html">Heuristic Hyperparams</a>
+            </div><div>
+                <a target="_self" href="Normalisation-0c47b6.html">Normalisation</a>
+            </div><div>
+                <a target="_self" href="Regularisation-95e518.html">Regularisation</a>
+            </div></div><div type="text" indent="0" style="padding-left:calc(1.5rem + 0rem); font-family:arial;
+            color:black; background-color:white;">&nbsp;</div><div style='height:50vh; border-radius:0 0 .5rem .5rem;'>&nbsp;</div>
+             </body></html>
